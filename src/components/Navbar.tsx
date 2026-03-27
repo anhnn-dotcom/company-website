@@ -12,7 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Handle background transparency
       if (currentScrollY > 20) {
         setIsScrolled(true);
@@ -26,7 +26,7 @@ export default function Navbar() {
       } else {
         setIsVisible(true);  // Scrolling up
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -35,7 +35,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm' : 'bg-white/50 backdrop-blur-sm border-b border-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm' : 'bg-white/90 backdrop-blur-sm border-b border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -69,7 +69,7 @@ export default function Navbar() {
       </div>
       {/* Mobile menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white border-b border-slate-200"
